@@ -15,7 +15,7 @@ public class PoolSimulator extends Canvas implements Runnable{
     private int ups = 30;
     private boolean running = false;
     private Thread thread;
-    Ball ball = new Ball(100,100,100,100,50,Color.RED);
+    Ball ball = new Ball(100,100,15,15,50,Color.RED);
 
     public PoolSimulator(int w, int h) {
         Dimension size = new Dimension(w, h);
@@ -74,14 +74,15 @@ public class PoolSimulator extends Canvas implements Runnable{
         }
 
         Graphics g = bs.getDrawGraphics();
-        g.setColor(Color.RED);
-        g.fillOval(200,200,50,50);
+        g.fillRect(0,0,800,600);
+        g.setColor(ball.getColor());
+        g.fillOval(ball.getX(),ball.getY(),ball.getSize(),ball.getSize());
         g.dispose();
         bs.show();
     }
 
     private void update() {
-
+        ball.move();
     }
 
     public static void main(String[] args) {
