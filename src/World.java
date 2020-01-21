@@ -25,15 +25,7 @@ public class World {
 
     private void lightCheck() {
         for (int i = 0; i < robots.length ; i++) {
-            for (int x = -1 ; x < 2 ; x++) {
-                for (int y = -1 ; y < 2 ; y++) {
-                    if (y == 0 && x == 0) {
-                        break;
-                    }
 
-                }
-            }
         }
     }
 }
-
