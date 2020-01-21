@@ -15,6 +15,7 @@ public class PoolSimulator extends Canvas implements Runnable{
     private int ups = 30;
     private boolean running = false;
     private Thread thread;
+    Ball ball = new Ball(100,100,100,100,50,Color.RED);
 
     public PoolSimulator(int w, int h) {
         Dimension size = new Dimension(w, h);

@@ -1,12 +1,14 @@
+import java.awt.*;
+
 public class Ball {
     int x;
     int y;
     int vX;
     int vY;
     int size;
-    String color;
+    Color color;
 
-    public Ball(int x, int y, int vX, int vY, int size, String color) {
+    public Ball(int x, int y, int vX, int vY, int size, Color color) {
         this.x = x;
         this.y = y;
         this.vX = vX;
