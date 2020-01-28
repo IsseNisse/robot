@@ -9,6 +9,7 @@ public class Game extends Canvas implements Runnable {
     private int ups = 30;
     private boolean running = false;
     private Thread thread;
+    World world = new World(30,30, 2);
 
     public Game(int w, int h) {
         Dimension size = new Dimension(w, h);
@@ -67,16 +68,26 @@ public class Game extends Canvas implements Runnable {
         }
 
         Graphics g = bs.getDrawGraphics();
-
+        g.setColor(new Color(0x000000));
+        g.drawRect(0,0,600,600);
+        tiles(g);
         g.dispose();
         bs.show();
+    }
+
+    private void tiles(Graphics g) {
+        for (int i = 0 ; i < world.getHeight() ; i++) {
+            for (int z = 0; i < world.getWidth() ; z++) {
+                g.setColor(new Color(0x000000));
+                g.fillRect(z * 20, i * 20, 20,20);
+            }
+        }
     }
 
     private void update() {}
 
     public static void main(String[] args) {
         Game game = new Game(600,600);
-        World world = new World();
         game.frame.add(game);
         game.frame.pack();
         game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
