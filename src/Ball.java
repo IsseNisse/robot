@@ -45,5 +45,5 @@ public class Ball {
         this.x = this.x + this.vX;
         this.y = this.y + this.vY;
     }
-   
+
 }
