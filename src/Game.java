@@ -68,18 +68,22 @@ public class Game extends Canvas implements Runnable {
         }
 
         Graphics g = bs.getDrawGraphics();
-        g.setColor(new Color(0x000000));
+        g.setColor(new Color(0xFFFFFF));
         g.drawRect(0,0,600,600);
         tiles(g);
+        g.setColor(new Color(0xAB3619));
+        for (int i = 0 ; i<world.getRobots().length ; i++) {
+            g.fillRect(1,1,1,1);
+        }
         g.dispose();
         bs.show();
     }
 
     private void tiles(Graphics g) {
+        g.setColor(new Color(0x000000));
         for (int i = 0 ; i < world.getHeight() ; i++) {
-            for (int z = 0; i < world.getWidth() ; z++) {
-                g.setColor(new Color(0x000000));
-                g.fillRect(z * 20, i * 20, 20,20);
+            for (int z = 0; z < world.getWidth() ; z++) {
+                g.drawRect(z * 20, i * 20, 20,20);
             }
         }
     }
