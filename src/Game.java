@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable {
-    private String title = "PoolSimulator";
+    private String title = "Robots";
     private JFrame frame;
     private int fps = 30;
     private int ups = 30;
@@ -67,6 +67,7 @@ public class Game extends Canvas implements Runnable {
         }
 
         Graphics g = bs.getDrawGraphics();
+
         g.dispose();
         bs.show();
     }
@@ -74,7 +75,8 @@ public class Game extends Canvas implements Runnable {
     private void update() {}
 
     public static void main(String[] args) {
-        Game game = new Game(800,600);
+        Game game = new Game(600,600);
+        World world = new World();
         game.frame.add(game);
         game.frame.pack();
         game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

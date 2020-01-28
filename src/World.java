@@ -4,10 +4,10 @@ public class World {
     private Robot robots[];
     private Tile tiles[];
 
-    public World(int width, int height) {
+    public World(int width, int height, int robots) {
         this.width = width;
         this.height = height;
-        this.robots = new Robot[(width*height)/10];
+        this.robots = new Robot[robots];
         this.tiles = new Tile[width*height];
     }
 
