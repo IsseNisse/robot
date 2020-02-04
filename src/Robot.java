@@ -17,54 +17,18 @@ public class Robot {
     }
 
     /**
-     * Gets the value of hunger
-     * @return returns that value
-     */
-    public int getHunger() {
-        return hunger;
-    }
-
-    /**
-     * Sets hunger to another value
-     * @param hunger new variable to keep track of the new hunger
-     */
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
-    }
-
-    /**
-     * Return the value of light, if its true or false
+     * get the value of X
      * @return
      */
-    public boolean isLight() {
-        return light;
-    }
-
     public int getX() {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     /**
-     * Reduces the value of hunger so that the robot eventually need to seek food
+     * Get the value of Y
      * @return
      */
-    public int hungry() {
-        return hunger--;
-    }
-
-    public void setLight(boolean light) {
-        this.light = light;
+    public int getY() {
+        return y;
     }
 }

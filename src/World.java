@@ -6,6 +6,12 @@ public class World {
     private Robot[] robots;
     private Tile[] tiles;
 
+    /**
+     * Creates a new world
+     * @param width width of world
+     * @param height height of world
+     * @param robots how many robots will be in the game
+     */
     public World(int width, int height, int robots) {
         this.width = width;
         this.height = height;
@@ -15,14 +21,17 @@ public class World {
         createTiles();
     }
 
-    public int getWidth() {
-        return width;
-    }
-
+    /**
+     * Get the array of robots
+     * @return
+     */
     public Robot[] getRobots() {
         return robots;
     }
 
+    /**
+     * create new robots
+     */
     private void createRobots() {
         int size = this.robots.length;
         boolean light;
@@ -38,6 +47,9 @@ public class World {
         }
     }
 
+    /**
+     * Create tiles
+     */
     private void createTiles() {
         int xX = 0;
         int yY = 0;
@@ -61,10 +73,10 @@ public class World {
         }
     }
 
-    public int getHeight() {
-        return height;
-    }
-
+    /**
+     * get how many tiles have been created
+     * @return
+     */
     public Tile[] getTiles() {
         return tiles;
     }
