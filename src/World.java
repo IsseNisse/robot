@@ -12,6 +12,7 @@ public class World {
         this.robots = new Robot[robots];
         this.tiles = new Tile[width*height];
         createRobots();
+        createTiles();
     }
 
     public int getWidth() {
@@ -30,40 +31,33 @@ public class World {
             int n = rand.nextInt(50);
 
             int m = rand.nextInt(2);
-            if (m == 1) {
-                light = true;
-            } else {
-                light = false;
-            }
+            light = m == 1;
             int x = rand.nextInt(30);
             int y = rand.nextInt(30);
             robots[i] = new Robot(n,light,x,y);
         }
     }
 
-    public void createTiles() {
+    private void createTiles() {
+        int xX = 0;
+        int yY = 0;
         for (int i = 0 ; i < this.tiles.length ; i++) {
+            if (xX > 29) {
+                xX = 0;
+                yY++;
+            }
             Random rand = new Random();
 
             boolean l;
             int m = rand.nextInt(10);
-            if (m < 2) {
-                l = true;
-            } else {
-                l = false;
-            }
-            tiles[i]. setLight(l);
+            l = m < 2;
 
             boolean f;
-            int n = rand.nextInt(1);
-            if (n < 2) {
-                f = true;
-            } else {
-                f = false;
-            }
-            tiles[i].setFood(f);
+            int n = rand.nextInt(10);
+            f = n < 2;
 
-            tiles[i].setX
+            this.tiles[i] = new Tile(f,l,xX,yY);
+            xX++;
         }
     }
 
@@ -73,11 +67,5 @@ public class World {
 
     public Tile[] getTiles() {
         return tiles;
-    }
-
-    private void lightCheck() {
-        for (int i = 0; i < robots.length ; i++) {
-
-        }
     }
 }

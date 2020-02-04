@@ -7,14 +7,12 @@ public class Tile {
 
     /**
      *
-     * @param robot - håller koll på om det finns en robot eller ej på tilen
      * @param food - håller koll på om det finns mat eller ej på tilen
      * @param light - håller koll på om det finns ljus eller ej på tilen
      * @param x - tilens poistion i x
      * @param y - tilens position i y
      */
-    public Tile(boolean robot, boolean food, boolean light, int x, int y) {
-        this.robot = robot;
+    public Tile(boolean food, boolean light, int x, int y) {
         this.food = food;
         this.light = light;
         this.x = x;
