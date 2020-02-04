@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+
 public class Game extends Canvas implements Runnable {
     private String title = "Robots";
     private JFrame frame;
@@ -11,6 +12,11 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     World world = new World(30,30, 2);
 
+    /**
+     * Skapar en frame
+     * @param w - framens bredd
+     * @param h - framens höjd
+     */
     public Game(int w, int h) {
         Dimension size = new Dimension(w, h);
         setPreferredSize(size);
@@ -18,12 +24,18 @@ public class Game extends Canvas implements Runnable {
         frame.setTitle(title);
     }
 
+    /**
+     * startar spelet
+     */
     private synchronized void start() {
         running = true;
         thread = new Thread(this);
         thread.start();
     }
 
+    /**
+     * avslutar spelet
+     */
     private synchronized void stop() {
         running = false;
         try {
@@ -33,6 +45,9 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * hanterar spelets framerate och updaterate
+     */
     @Override
     public void run() {
         double frameUpdateInterval = 1000000000.0 / fps;
@@ -60,6 +75,9 @@ public class Game extends Canvas implements Runnable {
         stop();
     }
 
+    /**
+     * ritar ut spelet på framen
+     */
     private void draw() {
         BufferStrategy bs = getBufferStrategy();
         if (bs == null) {
@@ -81,6 +99,10 @@ public class Game extends Canvas implements Runnable {
         bs.show();
     }
 
+    /**
+     * Ritar ut alla tiles och ger dem olika färger beroende på om dem har en ljuskälla eller mat i sig
+     * @param g grafik
+     */
     private void tiles(Graphics g) {
         for (int i = 0 ; i < world.getTiles().length ; i++) {
             g.setColor(new Color(0x000000));

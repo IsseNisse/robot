@@ -19,66 +19,59 @@ public class Tile {
         this.y = y;
     }
 
-    /**
-     *
-     * @return - return värdet på robot
-     */
-    public boolean isRobot() {
-        return robot;
-    }
 
     /**
-     *
-     * @param robot - ändrar värdet på robot
-     */
-    public void setRobot(boolean robot) {
-        this.robot = robot;
-    }
-
-    /**
-     *
-     * @return - return värdet på light
+     * return värdet på light
+     * @return
      */
     public boolean isLight() {
         return light;
     }
 
     /**
-     *
-     * @param light - ändrar värdet på light
+     * ändrar värdet på light
+     * @param light
      */
     public void setLight(boolean light) {
         this.light = light;
     }
 
     /**
-     *
-     * @return - return värdet på food
+     * return värdet på food
+     * @return
      */
     public boolean isFood() {
         return food;
     }
 
     /**
-     *
-     * @param food - ändrar värdet på food
+     * returnar tilens x värde
+     * @return
      */
-    public void setFood(boolean food) {
-        this.food = food;
-    }
-
     public int getX() {
         return x;
     }
 
+    /**
+     * returnar tilens y värde
+     * @return
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * ändrar tilens x värde
+     * @param x
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * ändrar tilens y värde
+     * @param y
+     */
     public void setY(int y) {
         this.y = y;
     }
