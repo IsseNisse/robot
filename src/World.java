@@ -41,6 +41,32 @@ public class World {
         }
     }
 
+    public void createTiles() {
+        for (int i = 0 ; i < this.tiles.length ; i++) {
+            Random rand = new Random();
+
+            boolean l;
+            int m = rand.nextInt(10);
+            if (m < 2) {
+                l = true;
+            } else {
+                l = false;
+            }
+            tiles[i]. setLight(l);
+
+            boolean f;
+            int n = rand.nextInt(1);
+            if (n < 2) {
+                f = true;
+            } else {
+                f = false;
+            }
+            tiles[i].setFood(f);
+
+            tiles[i].setX
+        }
+    }
+
     public int getHeight() {
         return height;
     }

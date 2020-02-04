@@ -71,10 +71,6 @@ public class Game extends Canvas implements Runnable {
         g.setColor(new Color(0xFFFFFF));
         g.drawRect(0,0,600,600);
         tiles(g);
-        g.setColor(new Color(0xAB3619));
-        for (int i = 0 ; i<world.getRobots().length ; i++) {
-            g.fillRect(1,1,1,1);
-        }
         g.dispose();
         bs.show();
     }

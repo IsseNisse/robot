@@ -63,4 +63,8 @@ public class Robot {
     public int hungry() {
         return hunger--;
     }
+
+    public void setLight(boolean light) {
+        this.light = light;
+    }
 }

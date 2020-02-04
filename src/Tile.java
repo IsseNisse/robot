@@ -2,17 +2,23 @@ public class Tile {
     private boolean robot;
     private boolean light;
     private boolean food;
+    private int x;
+    private int y;
 
     /**
      *
      * @param robot - håller koll på om det finns en robot eller ej på tilen
      * @param food - håller koll på om det finns mat eller ej på tilen
      * @param light - håller koll på om det finns ljus eller ej på tilen
+     * @param x - tilens poistion i x
+     * @param y - tilens position i y
      */
-    public Tile(boolean robot, boolean food, boolean light) {
+    public Tile(boolean robot, boolean food, boolean light, int x, int y) {
         this.robot = robot;
         this.food = food;
         this.light = light;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -63,15 +69,19 @@ public class Tile {
         this.food = food;
     }
 
-    /**
-     *
-     * @return - returnar true om det finns både en robot och mat på en tile
-     */
-    public boolean isEat() {
-        boolean eat = false;
-        if (this.food && this.robot) {
-            eat = true;
-        }
-        return eat;
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }
